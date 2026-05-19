@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <span class="logo">John Lee</span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="label">About Me</p>
+            <h1>Hi, I'm Sung Guk "John" Lee.</h1>
+            <p class="bio">
+              ESL teacher and recent Computer Science graduate making the move into software development.
+              When I'm not teaching English or writing code, you can find me lifting weights, boxing, or playing the guitar.
+            </p>
+            <div class="skills">
+              <span>Python</span>
+              <span>Flask</span>
+              <span>SQL</span>
+              <span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+            <a href="#contact" class="btn">Get in touch</a>
+          </div>
+          <div class="about-avatar">
+            <div class="avatar-placeholder">JL</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <p class="label">Projects</p>
+        <h2>Things I've built</h2>
+        <div class="projects-grid">
+
+          <article class="card">
+            <div class="card-top card-top--1"></div>
+            <div class="card-body">
+              <h3>Academic Institution Ticketing Software</h3>
+              <p>A university group project — a role-based support ticketing system where students submit tickets, staff manage departmental queues, and managers oversee cross-department operations. Features automatic routing, activity logs, and a notification system.</p>
+              <div class="card-tags">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>SQLite</span>
+                <span>Jinja</span>
+                <span>pytest</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/CSCI441Group5/academic-institution-ticketing-software" target="_blank" rel="noopener" class="btn btn--small btn--outline">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top card-top--2"></div>
+            <div class="card-body">
+              <h3>Ran English</h3>
+              <p>A multi-page website built as a final project for a Computer Science I class. Includes a home page, gallery, schedule, FAQ, contact form, announcements, and directions.</p>
+              <div class="card-tags">
+                <span>JavaScript</span>
+                <span>CSS</span>
+                <span>HTML</span>
+              </div>
+              <div class="card-links">
+                <a href="https://katsuya245126.github.io" target="_blank" rel="noopener" class="btn btn--small">Live</a>
+                <a href="https://github.com/katsuya245126/katsuya245126.github.io" target="_blank" rel="noopener" class="btn btn--small btn--outline">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top card-top--3"></div>
+            <div class="card-body">
+              <h3>Project Three</h3>
+              <p>A short description of what this project does and the problem it solves. One or two sentences.</p>
+              <div class="card-tags">
+                <span>JavaScript</span>
+                <span>CSS</span>
+              </div>
+              <div class="card-links">
+                <a href="#" class="btn btn--small">Live</a>
+                <a href="#" class="btn btn--small btn--outline">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <p class="label">Contact</p>
+        <h2>Let's talk</h2>
+        <p class="contact-sub">Have a project in mind or just want to say hello? Send me a message.</p>
+        <form class="contact-form" action="#" method="post">
+          <div class="form-row">
+            <label for="name">Name
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </label>
+            <label for="email">Email
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </label>
+          </div>
+          <label for="message">Message
+            <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+          </label>
+          <button type="submit" class="btn">Send message</button>
+        </form>
+        <div class="contact-links">
+          <a href="https://github.com/katsuya245126" target="_blank" rel="noopener" class="contact-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Sung Guk "John" Lee. Built with HTML &amp; CSS.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
