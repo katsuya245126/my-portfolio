@@ -221,6 +221,12 @@ nav a:hover { color: var(--text); }
 
 .card-links { display: flex; gap: 0.5rem; }
 
+.coming-soon {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
 /* ── Contact ── */
 .contact-sub {
   color: var(--muted);
