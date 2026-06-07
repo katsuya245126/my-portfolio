@@ -30,6 +30,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6.5rem; /* floating nav + breathing room */
+  color-scheme: light only;
 }
 
 body {
@@ -239,23 +240,22 @@ nav a:focus-visible {
 
 .hero-title {
   max-width: 16ch;
-  margin-bottom: 2rem;
-}
-
-.hero-cta {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-sub {
-  display: block;
   font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(1.05rem, 1.6vw, 1.35rem);
   font-weight: 400;
   line-height: 1.45;
   color: var(--muted);
   letter-spacing: -0.005em;
-  margin-top: 1.5rem;
   max-width: 38ch;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  margin-bottom: 3rem;
 }
 
 .hero-meta {
