@@ -59,8 +59,8 @@ section { padding-block: 7rem; position: relative; }
 /* ── Reveal ── */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  transform: translateY(16px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
   transition-delay: var(--reveal-delay, 0ms);
 }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
@@ -251,7 +251,7 @@ nav a:focus-visible {
   color: var(--muted);
   letter-spacing: -0.005em;
   max-width: 38ch;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .hero-cta {
@@ -700,7 +700,7 @@ footer p {
 
 @media (max-width: 768px) {
   section { padding-block: 5rem; }
-  .hero { min-height: 80vh; padding-block: 4rem 3rem; }
+  .hero { min-height: 80vh; padding-block: 6rem 3rem; }
   .hero-meta { gap: 1.75rem; }
   .work-item { grid-template-columns: 1fr; gap: 0.75rem; padding: 2rem 0; }
   .work-item:hover { padding-inline: 0; }

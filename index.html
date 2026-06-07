@@ -239,7 +239,7 @@
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
 
     document.querySelectorAll('.reveal').forEach((el, i) => {
       el.style.setProperty('--reveal-delay', Math.min(i, 3) * 90 + 'ms');
