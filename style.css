@@ -118,6 +118,9 @@ h3 {
   50%      { transform: scale(0.7); opacity: 0.6; }
 }
 
+.hero .eyebrow-dot { animation: pulse 2.4s ease-in-out infinite; }
+.eyebrow-dot { animation: none; }
+
 /* ── Floating Nav ── */
 header {
   position: fixed;
@@ -236,6 +239,10 @@ nav a:focus-visible {
 
 .hero-title {
   max-width: 16ch;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
   margin-bottom: 3rem;
 }
 
@@ -347,9 +354,13 @@ nav a:focus-visible {
   z-index: -1;
 }
 
-.work-item:hover { padding-inline: 1.25rem; }
-.work-item:hover::before { opacity: 1; }
-.work-item:hover .work-num { color: var(--accent); }
+.work-item:hover,
+.work-item:focus-within { padding-inline: 1.25rem; }
+.work-item:hover::before,
+.work-item:focus-within::before { opacity: 1; }
+.work-item:hover .work-num,
+.work-item:focus-within .work-num { color: var(--accent); }
+.work-item:active { background: var(--accent-bg); }
 
 .work-num {
   font-family: 'Archivo', sans-serif;
@@ -373,6 +384,46 @@ nav a:focus-visible {
   justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
+}
+
+.work-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.work-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.work-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.work-badge--green {
+  color: #16a34a;
+  background: #dcfce7;
+}
+
+.work-badge--blue {
+  color: var(--accent);
+  background: var(--accent-bg);
 }
 
 .work-tags {
@@ -579,6 +630,21 @@ nav a:focus-visible {
   transition: background-color 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.2s var(--ease);
 }
 
+.btn--cta {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.btn--cta:hover {
+  background: var(--accent-ink);
+  border-color: var(--accent-ink);
+  transform: translateY(-2px);
+}
+
+.btn--cta svg { transition: transform 0.3s var(--ease); }
+.btn--cta:hover svg { transform: translateY(3px); }
+
 .btn--primary {
   background: #fff;
   color: var(--ink);
@@ -663,4 +729,5 @@ footer p {
   }
   .reveal { opacity: 1; transform: none; }
   .marquee-track { animation: none; }
+  .hero .eyebrow-dot { animation: none; }
 }
