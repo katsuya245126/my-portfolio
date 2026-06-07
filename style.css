@@ -797,6 +797,8 @@ footer p {
 @media (max-width: 480px) {
   .container { padding-inline: 1.25rem; }
   .hero-meta > div { min-width: calc(50% - 1rem); }
+  nav ul { display: none; }
+  nav { justify-content: space-between; gap: 0; }
 }
 
 /* ── Motion preferences ── */
