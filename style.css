@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
-   John Lee — Portfolio
+   John Lee | Portfolio
    Style: Editorial minimal + motion-driven
    Palette: Monochrome + electric blue accent
    Type:   Archivo (display) + Space Grotesk (body)
@@ -127,7 +127,6 @@ h3 {
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 4px var(--accent-bg);
-  animation: pulse 2.4s ease-in-out infinite;
 }
 
 @keyframes pulse {
@@ -136,7 +135,6 @@ h3 {
 }
 
 .hero .eyebrow-dot { animation: pulse 2.4s ease-in-out infinite; }
-.eyebrow-dot { animation: none; }
 
 /* ── Floating Nav ── */
 header {
