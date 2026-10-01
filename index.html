@@ -9,20 +9,20 @@
 
   <!-- Open Graph / link previews -->
   <meta property="og:title" content="John Lee | Teacher turned full-stack developer" />
-  <meta property="og:description" content="ESL teacher and CS graduate building full-stack software. I built Coco English, an AI speaking practice app my students use for homework." />
+  <meta property="og:description" content="ESL teacher and CS graduate building full-stack web apps. The latest is Coco English, an AI speaking practice app I built for my own students." />
   <meta property="og:url" content="https://sungguklee.com" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary" />
-  <!-- Add a 1200x630 screenshot of the hero as og-image.png in the repo root, then
-       uncomment these two lines and change twitter:card above to summary_large_image. -->
-  <!-- <meta property="og:image" content="https://sungguklee.com/og-image.png" /> -->
-  <!-- <meta property="og:image:alt" content="John Lee, teacher turned full-stack developer." /> -->
+  <meta property="og:image" content="https://sungguklee.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="John Lee, teacher turned full-stack developer, beside two Coco English app screens." />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=9" />
   <script>
     (function() {
       const saved = localStorage.getItem('theme');
@@ -54,37 +54,51 @@
 
     <!-- Hero -->
     <section class="hero">
-      <div class="container">
-        <p class="eyebrow reveal">
-          <span class="eyebrow-dot"></span>
-          Available for full-time roles
-        </p>
-        <h1 class="hero-title reveal">
-          Sung Guk &ldquo;John&rdquo; Lee
-        </h1>
-        <p class="hero-sub reveal">Teacher turned full-stack developer.</p>
-        <div class="hero-cta reveal">
-          <a href="#work" class="btn btn--cta">
-            See my work
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-          </a>
-          <a href="https://coco-english-demo.vercel.app/" target="_blank" rel="noopener" class="btn btn--outline">
-            Try the Coco English demo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
-          </a>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">
+            <span class="eyebrow-dot"></span>
+            Available for full-time roles
+          </p>
+          <h1 class="hero-title reveal">
+            Sung Guk <span class="nowrap">&ldquo;John&rdquo; Lee</span>
+          </h1>
+          <p class="hero-sub reveal">Teacher turned full-stack developer.</p>
+          <div class="hero-cta reveal">
+            <a href="#work" class="btn btn--cta">
+              See my work
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
+            <a href="https://coco-english-demo.vercel.app/" target="_blank" rel="noopener" class="btn btn--outline">
+              Try the Coco English demo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+          <div class="hero-meta reveal">
+            <div>
+              <span class="meta-label">Based in</span>
+              <span class="meta-value">South Korea</span>
+            </div>
+            <div>
+              <span class="meta-label">Focus</span>
+              <span class="meta-value">Full-stack web</span>
+            </div>
+            <div>
+              <span class="meta-label">Building</span>
+              <span class="meta-value">Coco English</span>
+            </div>
+          </div>
         </div>
-        <div class="hero-meta reveal">
-          <div>
-            <span class="meta-label">Based in</span>
-            <span class="meta-value">South Korea</span>
+
+        <!-- Real Coco English screens, captured from the live demo -->
+        <div class="hero-visual reveal">
+          <div class="phone phone--back">
+            <img src="images/coco-practice.png" width="780" height="1520" decoding="async"
+                 alt="Coco English pronunciation drill asking the student to listen to the word fish, then record it." />
           </div>
-          <div>
-            <span class="meta-label">Focus</span>
-            <span class="meta-value">Full-stack web</span>
-          </div>
-          <div>
-            <span class="meta-label">Building</span>
-            <span class="meta-value">Coco English</span>
+          <div class="phone phone--front">
+            <img src="images/coco-mission.jpg" width="780" height="1520" fetchpriority="high"
+                 alt="Coco English speaking mission where Coco the cat asks what the student likes to do on weekends." />
           </div>
         </div>
       </div>
@@ -150,47 +164,63 @@
           <h2>Things I've built.</h2>
         </div>
 
-        <ol class="work-list">
-
-          <li class="work-item reveal">
-            <span class="work-num">01</span>
-            <div class="work-main">
-              <div class="work-head">
-                <div class="work-title-row">
-                  <h3>Coco English</h3>
-                  <span class="work-badge work-badge--green">Live</span>
-                </div>
-                <div class="work-tags">
-                  <span>TypeScript</span><span>Next.js 15</span><span>React 19</span><span>Supabase</span><span>PostgreSQL</span><span>OpenAI</span><span>Azure Speech</span><span>Vercel</span>
-                </div>
+        <!-- Featured project -->
+        <article class="feature reveal">
+          <div class="feature-top">
+            <div class="feature-copy">
+              <span class="work-num">01</span>
+              <div class="work-title-row">
+                <h3>Coco English</h3>
+                <span class="work-badge work-badge--green">Live</span>
               </div>
-              <p>An AI app for practicing spoken English. Students record a response, and the app transcribes it, checks whether it answers the prompt and uses the target pattern, then gives pronunciation feedback. I built it to replace the speech recordings I used to assign and collect one student at a time.</p>
-              <p>The app runs on Next.js App Router with React Server Components and Server Actions, backed by Supabase/PostgreSQL with versioned SQL migrations. Separate authentication flows for teachers and students are enforced with row-level security. Azure Speech handles phoneme analysis, OpenAI handles evaluation and moderation, Vercel cron jobs run scheduled work, and a content-addressed TTS cache keeps paid API costs down.</p>
-              <p>Backed by 1,200+ automated tests, including Playwright end-to-end coverage.</p>
-              <div class="work-links">
-                <a href="https://coco-english-demo.vercel.app/" target="_blank" rel="noopener" class="link-arrow">
-                  Try the demo
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
-                </a>
-              </div>
-              <p class="work-note">No sign-up. About 3 minutes. Needs a microphone.</p>
+              <p>An AI app for practicing spoken English. Students record an answer and get feedback on what they said and how they pronounced it. I built it to replace the speech recordings I used to assign and collect one student at a time.</p>
+              <a href="https://coco-english-demo.vercel.app/" target="_blank" rel="noopener" class="btn btn--primary">
+                Try the demo
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
+              <p class="work-note">No sign-up. About 3&nbsp;minutes. Needs a microphone.</p>
             </div>
-          </li>
+            <div class="shot">
+              <img src="images/coco-english.png" width="1600" height="1200" loading="lazy" decoding="async"
+                   alt="Coco English welcome screen with Coco the cat cheering and a Try the demo button." />
+            </div>
+          </div>
+          <div class="feature-bottom">
+            <div>
+              <h4 class="meta-label">How it's built</h4>
+              <ul class="feature-list">
+                <li>Next.js App Router on Supabase/PostgreSQL</li>
+                <li>Separate teacher and student logins, enforced with row-level security</li>
+                <li>Azure Speech scores pronunciation; OpenAI handles evaluation and moderation</li>
+                <li>A content-addressed TTS cache keeps paid API costs down</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="meta-label">Testing and stack</h4>
+              <p class="work-proof">Backed by 1,200+ automated tests, including Playwright end-to-end coverage.</p>
+              <div class="work-tags">
+                <span>TypeScript</span><span>Next.js 15</span><span>React 19</span><span>Supabase</span><span>PostgreSQL</span><span>OpenAI</span><span>Azure Speech</span><span>Vercel</span>
+              </div>
+            </div>
+          </div>
+        </article>
 
-          <li class="work-item reveal">
-            <span class="work-num">02</span>
-            <div class="work-main">
-              <div class="work-head">
-                <div class="work-title-row">
-                  <h3>University IT Support Ticketing System</h3>
-                  <span class="work-badge work-badge--blue">Group project</span>
-                </div>
-                <div class="work-tags">
-                  <span>Python</span><span>Flask</span><span>SQLite</span><span>Jinja</span><span>pytest</span>
-                </div>
+        <div class="work-grid">
+
+          <article class="project project--text reveal">
+            <div class="project-body">
+              <span class="work-num">02</span>
+              <div class="work-title-row">
+                <h3>University IT Support Ticketing System</h3>
+                <span class="work-badge work-badge--blue">Group project</span>
               </div>
               <p>A role-based ticketing system for university support workflows, with separate dashboards and ticket queues for student, staff, and manager roles. Includes category-based routing, activity logs, a notification panel, and an automated pytest suite.</p>
-              <p>Primary contributor on a five-person team, authoring the majority of the backend and automated test suite.</p>
+            </div>
+            <div class="project-body">
+              <p class="work-proof">Primary contributor on a five-person team, authoring the majority of the backend and automated test suite.</p>
+              <div class="work-tags">
+                <span>Python</span><span>Flask</span><span>SQLite</span><span>Jinja</span><span>pytest</span>
+              </div>
               <div class="work-links">
                 <a href="https://github.com/CSCI441Group5/academic-institution-ticketing-software" target="_blank" rel="noopener" class="link-arrow">
                   GitHub
@@ -198,21 +228,23 @@
                 </a>
               </div>
             </div>
-          </li>
+          </article>
 
-          <li class="work-item reveal">
-            <span class="work-num">03</span>
-            <div class="work-main">
-              <div class="work-head">
-                <div class="work-title-row">
-                  <h3>Guitar Song Tracker</h3>
-                  <span class="work-badge work-badge--green">Live</span>
-                </div>
-                <div class="work-tags">
-                  <span>Python</span><span>Flask</span><span>PostgreSQL</span><span>JavaScript</span>
-                </div>
+          <article class="project project--media reveal">
+            <div class="shot shot--banner">
+              <img src="images/guitar-song-tracker.jpg" width="1800" height="1125" loading="lazy" decoding="async"
+                   alt="Guitar Song Tracker library listing songs with their tuning, capo position, and learning status." />
+            </div>
+            <div class="project-body">
+              <span class="work-num">03</span>
+              <div class="work-title-row">
+                <h3>Guitar Song Tracker</h3>
+                <span class="work-badge work-badge--green">Live</span>
               </div>
               <p>A web app for keeping track of songs I want to learn on guitar. It stores the tuning, capo position, and a YouTube link for each one, plus how far along I am. Search and filter the library, or export the entire collection to JSON and import it again.</p>
+              <div class="work-tags">
+                <span>Python</span><span>Flask</span><span>PostgreSQL</span><span>JavaScript</span>
+              </div>
               <div class="work-links">
                 <a href="https://guitar-song-tracker.onrender.com/" target="_blank" rel="noopener" class="link-arrow">
                   Live site
@@ -224,9 +256,9 @@
                 </a>
               </div>
             </div>
-          </li>
+          </article>
 
-        </ol>
+        </div>
       </div>
     </section>
 
@@ -247,6 +279,7 @@
           <dl class="about-facts">
             <div><dt>Stack</dt><dd>TypeScript, Next.js, React, Supabase/PostgreSQL</dd></div>
             <div><dt>Currently</dt><dd>Seeking a full-time software role</dd></div>
+            <div><dt>Languages</dt><dd>English (fluent) &middot; Korean (conversational) &middot; Japanese (conversational)</dd></div>
             <div><dt>Outside work</dt><dd>Boxing, guitar, lifting</dd></div>
           </dl>
         </div>
