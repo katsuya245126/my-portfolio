@@ -22,12 +22,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" />
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=10" />
   <link rel="icon" href="favicon.ico" sizes="48x48" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <script>
+    document.documentElement.classList.add('js');
     (function() {
       const saved = localStorage.getItem('theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -47,7 +48,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <button class="theme-toggle" id="themeToggle" aria-label="Dark mode" aria-pressed="false">
         <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
@@ -60,15 +61,15 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow reveal">
+          <p class="eyebrow hero-in">
             <span class="eyebrow-dot"></span>
             Available for full-time roles
           </p>
-          <h1 class="hero-title reveal">
+          <h1 class="hero-title hero-in">
             Sung Guk <span class="nowrap">&ldquo;John&rdquo; Lee</span>
           </h1>
-          <p class="hero-sub reveal">Teacher turned full-stack developer.</p>
-          <div class="hero-cta reveal">
+          <p class="hero-sub hero-in">Teacher turned full-stack developer.</p>
+          <div class="hero-cta hero-in">
             <a href="#work" class="btn btn--cta">
               See my work
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -78,7 +79,7 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
             </a>
           </div>
-          <div class="hero-meta reveal">
+          <div class="hero-meta hero-in">
             <div>
               <span class="meta-label">Based in</span>
               <span class="meta-value">South Korea</span>
@@ -95,7 +96,7 @@
         </div>
 
         <!-- Real Coco English screens, captured from the live demo -->
-        <div class="hero-visual reveal">
+        <div class="hero-visual hero-in">
           <div class="phone phone--back">
             <img src="images/coco-practice.png" width="780" height="1520" decoding="async"
                  alt="Coco English pronunciation drill asking the student to listen to the word fish, then record it." />
@@ -109,7 +110,7 @@
     </section>
 
     <!-- Marquee divider -->
-    <div class="marquee" aria-hidden="true">
+    <div class="marquee" aria-hidden="true" title="Click to pause">
       <div class="marquee-track">
         <span>TypeScript</span><span class="dot">/</span>
         <span>JavaScript</span><span class="dot">/</span>
@@ -351,29 +352,46 @@
 
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
+    // Marquee: click or tap to pause/resume (hover also pauses it, in CSS)
+    const marquee = document.querySelector('.marquee');
+    marquee.addEventListener('click', () => marquee.classList.toggle('is-paused'));
+
     // Theme toggle
     const toggle = document.getElementById('themeToggle');
+    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
     function applyTheme(dark) {
       if (dark) {
         document.documentElement.setAttribute('data-theme', 'dark');
-        toggle.classList.remove('is-light');
-        toggle.classList.add('is-dark');
       } else {
         document.documentElement.removeAttribute('data-theme');
-        toggle.classList.remove('is-dark');
-        toggle.classList.add('is-light');
+      }
+      toggle.classList.toggle('is-dark', dark);
+      toggle.classList.toggle('is-light', !dark);
+      toggle.setAttribute('aria-pressed', String(dark));
+    }
+
+    // Cross-fade the switch where View Transitions exist; swap instantly elsewhere
+    function switchTheme(dark) {
+      if (document.startViewTransition) {
+        document.startViewTransition(() => applyTheme(dark));
+      } else {
+        applyTheme(dark);
       }
     }
 
     // Set initial icon state
-    const initDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    applyTheme(initDark);
+    applyTheme(document.documentElement.getAttribute('data-theme') === 'dark');
 
     toggle.addEventListener('click', () => {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      applyTheme(!isDark);
-      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      const dark = document.documentElement.getAttribute('data-theme') !== 'dark';
+      switchTheme(dark);
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    });
+
+    // Follow OS theme changes until the visitor picks one themselves
+    darkQuery.addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) switchTheme(e.matches);
     });
   </script>
 
